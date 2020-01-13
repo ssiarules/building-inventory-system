@@ -2,7 +2,7 @@ class Api::V1::BuildingsController < ApplicationController
     def index
         @buildings = Building.all
 
-        render json: @building, status: 200 
+        render json: @buildings, status: 200 
     end 
 
     def show 
@@ -25,7 +25,7 @@ class Api::V1::BuildingsController < ApplicationController
      end 
 
      def destroy
-         @building = Product.find(params[:id])
+         @building = Building.find(params[:id])
          @building.delete 
 
         render json: { buildingId: @building.id}
